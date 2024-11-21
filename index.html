@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        #header {
+            width: 100%;
+            text-align: center;
+            position: fixed;
+            z-index: 99;
+            top: 0;
+            background-color: #001f3f;
+            color: #ffd700;
+        }
+
+        nav ul, li, a {
+            color: #f5f5dc;
+            list-style: none;
+            text-decoration: none;
+            display: inline;
+            overflow: hidden;
+            margin: 0 10px;
+        }
+
+        main {
+            margin: 130px 12px 0 12px;
+        }
+
+        .poem {
+            font-family: 'Georgia', serif;
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #333;
+            margin: 20px;
+            padding: 10px;
+            border-left: 4px solid #001f3f;
+            background-color: #f9f9f9;
+        }
+
+        .poem h3 {
+            color: pink;
+        }
+
+        @media screen and (min-width: 768px) {
+            nav ul, li, a {
+                font-size: 20px;
+            }
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 100;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            max-width: 400px;
+            border-radius: 8px;
+        }
+
+        .popup h2 {
+            margin-top: 0;
+        }
+
+        .popup p {
+            margin-bottom: 20px;
+        }
+
+        .popup button {
+            background-color: #001f3f;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .popup button:hover {
+            background-color: #ffd700;
+            color: #001f3f;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 99;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 12px;
+        }
+    </style>
+</head>
+<body>
+    <section id="header">
+        <h1>Welcome To My Poetry World</h1>
+        <nav>
+            <ul>
+                <li><a href="#poetry">Poetry</a></li>
+                <li><a href="javascript:void(0);" onclick="openPopup('aboutPopup')">About</a></li>
+                <li><a href="javascript:void(0);" onclick="openPopup('contactPopup')">Contact</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <main>
+        <section id="poetry">
+            <h2>My Poems</h2>
+            <article>
+                <div class="poem">
+                    <h3><strong>Title:</strong> The Path To Myselfe</h3>
+                    <p>Walking down the lane of time,</p>
+                    <p>Confused—what to be or what not to be?</p>
+                    <p>Mom wishes, Dad wishes,</p>
+                    <p>Siblings' desires—whose dreams to fulfill first?</p>
+                    
+                    <p>I want to be me,</p>
+                    <p>But still haven’t found my name yet.</p>
+                    <p>Who am I? What am I?</p>
+                    <p>What are my goals? What dreams are mine?</p>
+                    
+                    <p>Are they foolish questions?</p>
+                    <p>Or do I truly need to think of them?</p>
+                    <p>At times, it feels like the answers drift away,</p>
+                    <p>Like leaves in the autumn wind.</p>
+                    
+                    <p>Yet, deep within, a quiet voice stirs:</p>
+                    <p>"Take your time, for the path unfolds.</p>
+                    <p>Let your heart guide you,</p>
+                    <p>And you’ll find who you’re meant to be."</p>
+                </div>
+            </article>
+
+            <article>
+                <div class="poem">
+                    <h3><strong>Title:</strong> princess Treassure</h3>
+                    <p>Oh priceless treasure that I’ve found,</p>
+                    <p>Let me be the shoulder for your burdens to lay on.</p>
+                    <p>Let me be your moon,</p>
+                    <p>Shining my light in your universe.</p>
+                    
+                    <p>Let me be the one you can seek support from—</p>
+                    <p>The hand to hold when you feel lost.</p>
+                    <p>Through the storms, I’ll be your calm.</p>
+                    <p>Through the darkness, I’ll be your guide.</p>
+                    
+                    <p>For you, I’ll be steady,</p>
+                    <p>A pillar when you need strength.</p>
+                    <p>Oh priceless treasure, let me be</p>
+                    <p>All you need, as you are to me.</p>
+                </div>
+            </article>
+
+            <article>
+                <div class="poem">
+                    <h3><strong>Title:</strong> A Broken Heart Solitude</h3>
+                    <p>I have let go,</p>
+                    <p>Even though I was once hurt—</p>
+                    <p>It’s okay now.</p>
+                    
+                    <p>I have moved on,</p>
+                    <p>No longer holding on to</p>
+                    <p>Complicated feelings.</p>
+                    
+                    <p>I’ve found solitude</p>
+                    <p>In being only me now.</p>
+                    <p>For I no longer feel anything</p>
+                    <p>After looking back at what once was.</p>
+                    
+                    <p>The weight has lifted,</p>
+                    <p>The pain has dulled,</p>
+                    <p>And now, all that remains is peace.</p>
+                </div>
+            </article>
+
+            <article>
+                <div class="poem">
+                    <h3><strong>Title:</strong> Guided By Your Light</h3>
+                    <p>I fall over and over again,</p>
+                    <p>Despite trying to guard my heart.</p>
+                    <p>But the more I fall,</p>
+                    <p>The more it leads me towards you.</p>
+                    
+                    <p>What magic lies in those eyes of yours?</p>
+                    <p>I see my entire world within them.</p>
+                    <p>I long to hold you closer,</p>
+                    <p>And keep you safely in my arms,</p>
+                    <p>Forever.</p>
+                </div>
+            </article>
+
+            <article>
+                <div class="poem">
+                    <h3><strong>Title:</strong> The Walls She Built</h3>
+                    <p>She’s lost,</p>
+                    <p>In a world of her own,</p>
+                    <p>Slowly and deeply falling</p>
+                    <p>In love with darkness and loneliness.</p>
+                    
+                    <p>She’s lost,</p>
+                    <p>Complicated thoughts and fading ideas,</p>
+                    <p>Living in a completely imaginary world.</p>
+                    
+                    <p>She’s lost,</p>
+                    <p>With a heart full of complications,</p>
+                    <p>Or maybe stranded emotions.</p>
+                    
+                    <p>She’s lost,</p>
+                    <p>In a faraway world</p>
+                    <p>Where no one can reach her,</p>
+                    <p>With no sense of security.</p>
+                    
+                    <p>She stands guarded,</p>
+                    <p>Surrounded by walls</p>
+                    <p>She’s built to keep the world away.</p>
+                </div>
+            </article>
+
+            <article>
+                <div class="poem">
+                    <h3><strong>Title:</strong> The Weight Of A Smile</h3>
+                    <p>Smiling, even though it bleeds,</p>
+                    <p>With a pain gripping tight, almost suffocating.</p>
+                    <p>I’m broken, yes, I am,</p>
+                    <p>But I can’t show it—</p>
+                    <p>I have to keep smiling.</p>
+                    
+                    <p>Even with tears in my eyes,</p>
+                    <p>My lips will keep smiling continuously.</p>
+                    <p>A mind full of painful pasts,</p>
+                    <p>A life full of loneliness,</p>
+                    <p>A mask of fake happiness.</p>
+                    
+                    <p>Tired of begging for love, care, attention.</p>
+                    <p>Tired of being hurt</p>
+                    <p>Over and over again.</p>
+                    
+                    <p>Is there no medicine</p>
+                    <p>For a broken heart?</p>
+                </div>
+            </article>
+
+            <article>
+                <div class="poem">
+                    <h3><strong>Title:</strong> Where Your Shadow Went</h3>
+                    <p>Claimed to love me,</p>
+                    <p>But didn’t see your shadow</p>
+                    <p>When I longed for your touch, or maybe just a slight care.</p>
+                    
+                    <p>Claimed to always be my shadow,</p>
+                    <p>When I was vulnerable and needed someone to lean on,</p>
+                    <p>Or maybe when I cried in a room as dark as coal,</p>
+                    <p>Wetting my pillow as though I were raining on it.</p>
+                    
+                    <p>Claimed to always understand me,</p>
+                    <p>But didn’t see your shadow</p>
+                    <p>When I was yearning for you</p>
+                    <p>On endless, sleepless nights.</p>
+                    
+                    <p>Claimed you understood,</p>
+                    <p>But I was left in the silence,</p>
+                    <p>Wondering where your shadow went.</p>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <!-- Popup for About -->
+    <div id="aboutPopup" class="popup">
+        <h2>About Me</h2>
+        <p>Behind these words is Fatima, a poetry writer who lets the verses speak louder than the name. Through my poetry, I aim to connect, inspire, and reflect the beauty of the world and the depth of human emotions.</p>
+        <button onclick="closePopup('aboutPopup')">Close</button>
+    </div>
+
+    <!-- Popup for Contact -->
+    <div id="contactPopup" class="popup">
+        <h2>Contact</h2>
+        <p>Thank you for your interest in reaching out! At this time, Fatima is unavailable for direct contact. However, your curiosity and support are truly appreciated.</p>
+        <p>Please check back in the future to see if this contact option becomes available. Your patience means a lot, and the poetry will always be here for you to explore.</p>
+        <button onclick="closePopup('contactPopup')">Close</button>
+    </div>
+
+    <!-- Overlay -->
+    <div id="overlay" class="overlay" onclick="closeAllPopups()"></div>
+
+    <footer>
+        <p>&copy; 2024 Fatima. All rights reserved</p>
+    </footer>
+
+    <script>
+        function openPopup(popupId) {
+            document.getElementById(popupId).style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closePopup(popupId) {
+            document.getElementById(popupId).style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        function closeAllPopups() {
+            const popups = document.querySelectorAll('.popup');
+            popups.forEach(popup => popup.style.display = 'none');
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
