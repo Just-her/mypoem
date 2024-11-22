@@ -22,13 +22,44 @@
             color: #ffd700;
         }
 
-        nav ul, li, a {
+        #header h1 {
+            color: #ffd700;
+            text-shadow: 
+              0 0 10px rgba(0, 255, 0.5),
+              0 0 20px rgba(0, 255, 0.5),
+              0 0 30px rgba(0, 255, 0.5),
+              0 0 40px rgba(0, 255, 0.8);
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 3s ease-in forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        nav a {
             color: #f5f5dc;
             list-style: none;
             text-decoration: none;
             display: inline;
             overflow: hidden;
             margin: 0 10px;
+        }
+
+        .slide-in {
+            transform: translateX(-100%);
+            animation: slideIn 3s ease-out forwards;
+        }
+
+        @keyframes slideIn {
+            to {
+                transform: translateX(0);
+            }
         }
 
         main {
@@ -43,7 +74,7 @@
             margin: 20px;
             padding: 10px;
             border-left: 4px solid #001f3f;
-            background-color: #f9f9f9;
+            background-color: #f9f9f9;
         }
 
         .poem h3 {
@@ -111,13 +142,11 @@
 </head>
 <body>
     <section id="header">
-        <h1>Welcome To My Poetry World</h1>
-        <nav>
-            <ul>
-                <li><a href="#poetry">Poetry</a></li>
-                <li><a href="javascript:void(0);" onclick="openPopup('aboutPopup')">About</a></li>
-                <li><a href="javascript:void(0);" onclick="openPopup('contactPopup')">Contact</a></li>
-            </ul>
+        <h1 class="fade-in">Welcome To My Poetry World</h1>
+        <nav class="slide-in">
+            <a href="#poetry">Poetry</a>
+            <a href="javascript:void(0);" onclick="openPopup('aboutPopup')">About</a>
+            <a href="javascript:void(0);" onclick="openPopup('contactPopup')">Contact</a>
         </nav>
     </section>
 
