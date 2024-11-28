@@ -23,7 +23,7 @@
         }
 
         #header h1 {
-            color: #ffd700;
+            color: rgba(255, 192, 203, 0.847);
             text-shadow: 
               0 0 10px rgba(0, 255, 0.5),
               0 0 20px rgba(0, 255, 0.5),
@@ -43,12 +43,18 @@
         }
 
         nav a {
+            font-size: 20px;
             color: #f5f5dc;
             list-style: none;
             text-decoration: none;
             display: inline;
             overflow: hidden;
             margin: 0 10px;
+        }
+
+        nav a:hover {
+            color: #ffd700; /* Highlight color on hover */
+            text-decoration: none;
         }
 
         .slide-in {
@@ -163,8 +169,23 @@
         }
 
         footer {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding: 12px;
+            background-color: #001f3f;
             text-align: center;
             margin-top: 12px;
+        }
+
+        footer p, footer a {
+            text-decoration: none;
+            color: #f5f5dc;
+            text-align: center;
+        }
+        
+        footer a:hover {
+            color: #ffffff; /* Highlight color on hover */
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -407,6 +428,7 @@
     <div id="overlay" class="overlay" onclick="closeAllPopups()"></div>
 
     <footer>
+        <p><a href="https://abachamusa.github.io/portfolio/">Meet the developer, Code_Ninja</a></p>
         <p>&copy; 2024 Fatima. All rights reserved</p>
     </footer>
 
